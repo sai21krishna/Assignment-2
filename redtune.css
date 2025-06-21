@@ -1,0 +1,344 @@
+/* RedTune - Modern Music Streaming App CSS */
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1a0505);
+  color: #ffffff;
+  transition: background 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* Light Mode */
+.light-mode {
+  background: linear-gradient(135deg, #fef7f7, #fff5f5);
+  color: #1f2937;
+}
+
+/* Top Bar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: linear-gradient(90deg, #1a0404, #2d0808, #1a0404);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(220, 38, 57, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 28px;
+  color: #ef4444;
+  text-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #ef4444;
+}
+
+/* Search Input */
+.left input {
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 2px solid rgba(220, 38, 57, 0.3);
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  width: 320px;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+.left input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.left input:focus {
+  border-color: #ef4444;
+  outline: none;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+}
+
+/* Nav Right */
+.right a,
+.right button {
+  margin-left: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  background: none;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.right a:hover,
+.right button:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.login {
+  background: linear-gradient(45deg, #dc2626, #ef4444);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+  transition: 0.3s;
+}
+
+.login:hover {
+  background: linear-gradient(45deg, #b91c1c, #dc2626);
+  transform: translateY(-2px);
+}
+
+/* Container Layout */
+.container {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 70px;
+  height: calc(100vh - 70px);
+  background: linear-gradient(180deg, #0a0a0a, #1a0404);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+  border-right: 1px solid rgba(220, 38, 57, 0.2);
+  position: sticky;
+  top: 70px;
+}
+
+/* Sidebar Icons */
+.nav-icon {
+  font-size: 22px;
+  color: #999;
+  margin: 25px 0;
+  padding: 12px;
+  border-radius: 15px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.nav-icon:hover {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  transform: scale(1.1);
+}
+
+.nav-icon.active {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.2);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Section Title */
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #ef4444, #f87171);
+
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scrollable Row */
+.scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.scroll-row {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 15px 0;
+}
+
+.scroll-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-row::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #dc2626, #ef4444);
+  border-radius: 4px;
+}
+
+.scroll-row::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.scroll-btn {
+  position: absolute;
+  font-size: 18px;
+  padding: 12px;
+  background: rgba(239, 68, 68, 0.8);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+}
+
+.scroll-btn:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+}
+
+.scroll-btn.left {
+  left: -15px;
+}
+
+.scroll-btn.right {
+  right: -15px;
+}
+
+/* Cards */
+.card,
+.artist-card {
+  min-width: 180px;
+  padding: 20px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(0, 0, 0, 0.3));
+  text-align: center;
+  transition: 0.3s;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.card:hover,
+.artist-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+}
+
+/* Artist Placeholder */
+.artist-placeholder {
+  height: 140px;
+  width: 100%;
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  border-radius: 15px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.artist-placeholder::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Light Mode Overrides */
+.light-mode .topbar {
+  background: linear-gradient(90deg, #fee2e2, #fecaca, #fee2e2);
+}
+
+.light-mode .sidebar {
+  background: linear-gradient(180deg, #fef7f7, #fee2e2);
+}
+
+.light-mode .main {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.light-mode .card,
+.light-mode .artist-card {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(255, 255, 255, 0.8));
+  border-color: rgba(239, 68, 68, 0.15);
+}
+
+.light-mode .left input {
+  background: rgba(255, 255, 255, 0.8);
+  color: #1f2937;
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.light-mode .left input::placeholder {
+  color: rgba(31, 41, 55, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .left input {
+    width: 200px;
+  }
+  .right a, .right button {
+    font-size: 12px;
+  }
+  .main {
+    padding: 20px;
+  }
+  .card, .artist-card {
+    min-width: 150px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 10px 15px;
+  }
+  .left input {
+    width: 150px;
+    padding: 8px 12px;
+  }
+  .right a, .right button {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+  .sidebar {
+    width: 60px;
+  }
+  .nav-icon {
+    font-size: 18px;
+    padding: 10px;
+  }
+}
